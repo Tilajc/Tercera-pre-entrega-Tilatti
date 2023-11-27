@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% for mascota in mascotas %}
+        <p>Nombre: {{mascota.nombre}}</p>
+        <p>Tipo: {{mascota.tipo}}</p>
+        <p>Edad: {{mascota.edad}}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}

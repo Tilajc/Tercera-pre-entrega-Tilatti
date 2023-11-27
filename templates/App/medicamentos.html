@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% for medicamento in medicamentos %}
+        <p>Nombre: {{medicamento.nombre}}</p>
+        <p>Precio: {{medicamento.precio}}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
