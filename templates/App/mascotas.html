@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block main %}
+    <div>
+        <form action="/app/filtrar_mascotas" method="GET">
+            {{form.as_p}}
+            <input type="submit" value="buscar">
+        </form>
+    </div>
     {% for mascota in mascotas %}
         <p>Nombre: {{mascota.nombre}}</p>
         <p>Tipo: {{mascota.tipo}}</p>

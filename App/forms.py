@@ -13,3 +13,6 @@ class MascotaForm(forms.Form):
 class MedicamentoForm(forms.Form):
     nombre = forms.CharField()
     precio = forms.IntegerField()
+
+class Filtro(forms.Form):
+    nombre = forms.CharField()

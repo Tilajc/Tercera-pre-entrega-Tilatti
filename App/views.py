@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from App.models import Servicio, Mascota, Medicamento
-from App.forms import ServicioForm, MascotaForm, MedicamentoForm
+from App.forms import ServicioForm, MascotaForm, MedicamentoForm, Filtro
+
+
 # Create your views here.
 
 def show_html(request):
@@ -27,13 +29,22 @@ def agregar_servicio(request):
 def mostrar_servicios(request):
     servicios = Servicio.objects.all()
     contexto = {
-        "servicios": servicios
+        "servicios": servicios,
+        "form": Filtro()
     }
 
     return render(request, 'App/servicios.html', contexto)
 
 def filtrar_servicios(request):
-    ...
+    nombre = request.GET["nombre"]
+    servicios = Servicio.objects.filter(nombre__icontains=nombre)
+
+    contexto = {
+        "servicios": servicios,
+        "form": Filtro()
+    }
+
+    return render(request, 'app/servicios.html', contexto)
 
 def agregar_mascota(request):
 
@@ -58,13 +69,22 @@ def agregar_mascota(request):
 def mostrar_mascotas(request):
     mascotas = Mascota.objects.all()
     contexto = {
-        "mascotas": mascotas
+        "mascotas": mascotas,
+        "form": Filtro()
     }
 
     return render(request, 'App/mascotas.html', contexto)
 
 def filtrar_mascotas(request):
-    ...
+    nombre = request.GET["nombre"]
+    mascotas = Mascota.objects.filter(nombre__icontains=nombre)
+
+    contexto = {
+        "mascotas": mascotas,
+        "form": Filtro()
+    }
+
+    return render(request, 'App/mascotas.html', contexto)
 
 def agregar_medicamento(request):
     if request.method == "POST":
@@ -87,10 +107,19 @@ def agregar_medicamento(request):
 def mostrar_medicamentos(request):
     medicamentos = Medicamento.objects.all()
     contexto = {
-        "medicamentos": medicamentos
+        "medicamentos": medicamentos,
+        "form": Filtro()
     }
 
     return render(request, 'App/medicamentos.html', contexto)
 
 def filtrar_medicamentos(request):
-    ...
+    nombre = request.GET["nombre"]
+    medicamentos = Medicamento.objects.filter(nombre__icontains=nombre)
+
+    contexto = {
+        "medicamentos": medicamentos,
+        "form": Filtro()
+    }
+
+    return render(request, 'App/medicamentos.html', contexto)

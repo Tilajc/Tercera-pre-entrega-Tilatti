@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 from django.urls import path
-from App.views import show_html, mostrar_servicios, mostrar_mascotas, mostrar_medicamentos, agregar_servicio, agregar_mascota, agregar_medicamento
+from App.views import show_html, mostrar_servicios, mostrar_mascotas, mostrar_medicamentos, agregar_servicio, agregar_mascota, agregar_medicamento, filtrar_servicios, filtrar_mascotas, filtrar_medicamentos
 
 urlpatterns = [
     path('show/', show_html),
@@ -25,5 +25,8 @@ urlpatterns = [
     path('medicamentos/', mostrar_medicamentos),
     path('agregar_servicio/', agregar_servicio),
     path('agregar_mascota/', agregar_mascota),
-    path('agregar_medicamento/', agregar_medicamento)
+    path('agregar_medicamento/', agregar_medicamento),
+    path('filtrar_servicios/', filtrar_servicios),
+    path('filtrar_mascotas/', filtrar_mascotas),
+    path('filtrar_medicamentos/', filtrar_medicamentos)
 ]
