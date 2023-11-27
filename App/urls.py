@@ -16,11 +16,14 @@ Including another URLconf
 """
 
 from django.urls import path
-from App.views import show_html, mostrar_usuarios, mostrar_mascotas, mostrar_medicamentos
+from App.views import show_html, mostrar_servicios, mostrar_mascotas, mostrar_medicamentos, agregar_servicio, agregar_mascota, agregar_medicamento
 
 urlpatterns = [
     path('show/', show_html),
-    path('usuarios/', mostrar_usuarios),
+    path('servicios/', mostrar_servicios),
     path('mascotas/', mostrar_mascotas),
-    path('medicamentos/', mostrar_medicamentos)
+    path('medicamentos/', mostrar_medicamentos),
+    path('agregar_servicio/', agregar_servicio),
+    path('agregar_mascota/', agregar_mascota),
+    path('agregar_medicamento/', agregar_medicamento)
 ]

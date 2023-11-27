@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% for servicio in servicios %}
+        <p>Servicio: {{servicio.nombre}}</p>
+        <p>Descripción: {{servicio.descripcion}}</p>
+        <p>Precio: ${{servicio.precio}}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
