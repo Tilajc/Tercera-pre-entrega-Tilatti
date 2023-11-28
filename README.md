@@ -1,6 +1,6 @@
 # Proyecto Coder
 
-Application Description PlaceHolder
+En la aplicación podras crear, y listar mascotas, Medicamentos, y servicios de una veterinaria
 
 ### Clone the app
 
